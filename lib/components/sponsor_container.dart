@@ -18,11 +18,13 @@ class _SponsorContainerState extends State<SponsorContainer> {
       child: MouseRegion(
         onEnter: (_) => _onHover(true),
         onExit: (_) => _onHover(false),
+        cursor: SystemMouseCursors.click,
+
         child: AnimatedScale(
-          scale: _isHovered ? 1.05 : 1.0,
-          duration: Duration(milliseconds: 200),
+          scale: _isHovered ? 1.03 : 1.0,
+          duration: Duration(milliseconds: 150),
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: Duration(milliseconds: 150),
             padding: EdgeInsets.only(bottom: 8),
             decoration: BoxDecoration(
               color: Colors.black,
@@ -30,10 +32,10 @@ class _SponsorContainerState extends State<SponsorContainer> {
               boxShadow: _isHovered
                   ? [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.8),
-                        offset: Offset(0, 0),
+                        color: Colors.black.withOpacity(0.6),
+                        offset: Offset(0, 4),
                         blurRadius: 10,
-                        spreadRadius: 1,
+                        spreadRadius: 5,
                       ),
                     ]
                   : [],

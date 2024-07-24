@@ -25,69 +25,76 @@ class _PlayerCardState extends State<PlayerCard> {
     return MouseRegion(
       onEnter: (_) => _onHover(true),
       onExit: (_) => _onHover(false),
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 200),
-        padding: const EdgeInsets.only(right: 16),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-          color: Colors.black,
-          boxShadow: _isHovered
-              ? [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 15,
-                    offset: Offset(0, 0), // changes position of shadow
-                  ),
-                ]
-              : [],
-        ),
-        child: Row(
-          children: [
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(8),
-                    bottomLeft: Radius.circular(8)),
-                color: Colors.white,
+      cursor: SystemMouseCursors.click,
+      child: AnimatedScale(
+        scale: _isHovered ? 1.05 : 1,
+        duration: Duration(milliseconds: 150),
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 150),
+          padding: const EdgeInsets.only(right: 16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+            color: _isHovered ? Colors.black54: Colors.black,
+            boxShadow: _isHovered
+                ? [
+                    BoxShadow(
+                          color: Colors.black.withOpacity(0.6),
+                          offset: Offset(0, 4),
+                          blurRadius: 10,
+                          spreadRadius: 5,
+                        ),
+                  ]
+                : [],
+          ),
+          child: Row(
+            children: [
+              Container(
+                
+                decoration: const BoxDecoration(
+                  
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      bottomLeft: Radius.circular(8)),
+                  color: Colors.white,
+                ),
+                child: Image.asset(
+                  widget.image,
+                  fit: BoxFit.cover,
+                ),
               ),
-              child: Image.asset(
-                widget.image,
-                fit: BoxFit.cover,
+              SizedBox(
+                width: 16,
               ),
-            ),
-            SizedBox(
-              width: 16,
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.name,
+                      style: kSectionSubheadingTextStyle.copyWith(
+                          fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      widget.position,
+                      style: kSectionSubheadingTextStyle.copyWith(fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    widget.name,
-                    style: kSectionSubheadingTextStyle.copyWith(
-                        fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    widget.position,
-                    style: kSectionSubheadingTextStyle.copyWith(fontSize: 12),
-                  ),
+                  Text(widget.goal,
+                      style: kSectionSubheadingTextStyle.copyWith(
+                          fontSize: 28, fontWeight: FontWeight.bold)),
+                  Text("Goals",
+                      style: kSectionSubheadingTextStyle.copyWith(
+                        fontSize: 16,
+                      )),
                 ],
               ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(widget.goal,
-                    style: kSectionSubheadingTextStyle.copyWith(
-                        fontSize: 28, fontWeight: FontWeight.bold)),
-                Text("Goals",
-                    style: kSectionSubheadingTextStyle.copyWith(
-                      fontSize: 16,
-                    )),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -125,6 +132,8 @@ class _SquarePlayerCardState extends State<SquarePlayerCard> {
     return MouseRegion(
       onEnter: (_) => _onHover(true),
       onExit: (_) => _onHover(false),
+      cursor: SystemMouseCursors.click,
+
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
         // padding: const EdgeInsets.all(16),
@@ -134,11 +143,11 @@ class _SquarePlayerCardState extends State<SquarePlayerCard> {
           boxShadow: _isHovered
               ? [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 15,
-                    offset: Offset(0, 0), // changes position of shadow
-                  ),
+                        color: Colors.black.withOpacity(0.6),
+                        offset: Offset(0, 4),
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                      ),
                 ]
               : [],
         ),

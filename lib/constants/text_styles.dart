@@ -8,3 +8,5 @@ const TextStyle kSectionSubheadingTextStyle = TextStyle(
     fontFamily: 'Gilroy',
     fontWeight: FontWeight.w500,
     color: Colors.white);
+
+const TextStyle kTabBarHeadingTextStyle = TextStyle(fontSize: 16, color: Colors.white, fontFamily: "Gilroy", fontWeight: FontWeight.w500);

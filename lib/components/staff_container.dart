@@ -25,6 +25,8 @@ class _StaffContainerState extends State<StaffContainer> {
     return MouseRegion(
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
+      cursor: SystemMouseCursors.click,
+
       child: TweenAnimationBuilder(
         duration: const Duration(milliseconds: 300),
         tween: ColorTween(

@@ -52,7 +52,7 @@ class TopPerformersViewWeb extends StatelessWidget {
                         Text(
                           'Mid Field',
                           style: kSectionSubheadingTextStyle.copyWith(
-                              fontSize: 28),
+                              fontSize: 20),
                         ),
                         SizedBox(height: 16),
                         PlayerCard(
@@ -88,7 +88,7 @@ class TopPerformersViewWeb extends StatelessWidget {
                         Text(
                           'Forward',
                           style: kSectionSubheadingTextStyle.copyWith(
-                              fontSize: 28),
+                              fontSize: 20),
                         ),
                         SizedBox(height: 16),
                         PlayerCard(
@@ -124,7 +124,7 @@ class TopPerformersViewWeb extends StatelessWidget {
                         Text(
                           'Defence',
                           style: kSectionSubheadingTextStyle.copyWith(
-                              fontSize: 28),
+                              fontSize: 20),
                         ),
                         SizedBox(height: 16),
                         PlayerCard(

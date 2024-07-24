@@ -36,6 +36,7 @@ class _FixturesContainerState extends State<FixturesContainer> {
           isHovered = hovering;
         });
       },
+      
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         decoration: BoxDecoration(
@@ -154,30 +155,13 @@ class _FixturesContainerState extends State<FixturesContainer> {
                 ],
               ),
             ),
-            IconButton(
-              icon: Icon(
-                isWishlist ? Icons.favorite : Icons.favorite_border,
-                color: isWishlist ? Colors.red : Colors.black,
-              ),
-              onPressed: () {
-                setState(() {
-                  isWishlist = !isWishlist;
-                });
-              },
-            ),
             TextButton(
               onPressed: () {
                 // handle view details action
               },
               child: Row(
                 children: [
-                  Text(
-                    'View Details',
-                    style: kSectionSubheadingTextStyle.copyWith(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                        fontSize: 12),
-                  ),
+                  
                   Icon(
                     Icons.arrow_forward_sharp,
                     color: Colors.orange,

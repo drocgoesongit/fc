@@ -1,3 +1,4 @@
+
 import 'package:fc/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,7 @@ class _NewsCardState extends State<NewsCard> {
           _isHovered = false;
         });
       },
+      cursor: SystemMouseCursors.click,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         padding: const EdgeInsets.all(8),

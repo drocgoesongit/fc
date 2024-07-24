@@ -27,7 +27,7 @@ class _ParentViewWebState extends State<ParentViewWeb> {
   Widget build(BuildContext context) {
     return Material(
       child: DefaultTabController(
-        length: 7,
+        length: 6,
         child: Scaffold(
           body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxScrolled) {
@@ -41,37 +41,38 @@ class _ParentViewWebState extends State<ParentViewWeb> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           child: const TabBar(
                             dividerColor: Colors.grey,
                             indicatorColor: Colors.redAccent,
                             labelColor: Colors.blue,
                             unselectedLabelColor: Colors.white,
+                            
                             dividerHeight: 0,
                             tabs: [
                               Text(
                                 "Home",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                               Text(
                                 "Teams",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                               Text(
                                 "All Fixtures",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                               Text(
                                 "News",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                               Text(
                                 "Sponsors",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                               Text(
                                 "About Us",
-                                style: kSectionHeadingTextStyle,
+                                style: kTabBarHeadingTextStyle,
                               ),
                             ],
                           ),

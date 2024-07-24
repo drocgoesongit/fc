@@ -27,6 +27,8 @@ class _TicketContainerState extends State<TicketContainer> {
     return MouseRegion(
       onEnter: (_) => _updateHoverState(true),
       onExit: (_) => _updateHoverState(false),
+      cursor: _isHovered ? SystemMouseCursors.click : SystemMouseCursors.basic,
+
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         decoration: BoxDecoration(
