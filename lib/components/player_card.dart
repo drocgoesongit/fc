@@ -34,24 +34,23 @@ class _PlayerCardState extends State<PlayerCard> {
           padding: const EdgeInsets.only(right: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            color: _isHovered ? Colors.black54: Colors.black,
+            color: _isHovered ? Colors.black54 : Colors.black,
             boxShadow: _isHovered
                 ? [
                     BoxShadow(
-                          color: Colors.black.withOpacity(0.6),
-                          offset: Offset(0, 4),
-                          blurRadius: 10,
-                          spreadRadius: 5,
-                        ),
+                      color: Colors.black.withOpacity(0.6),
+                      offset: Offset(0, 4),
+                      blurRadius: 10,
+                      spreadRadius: 5,
+                    ),
                   ]
                 : [],
           ),
           child: Row(
             children: [
               Container(
-                
+                padding: EdgeInsets.only(right: 10),
                 decoration: const BoxDecoration(
-                  
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8),
                       bottomLeft: Radius.circular(8)),
@@ -106,6 +105,91 @@ class _PlayerCardState extends State<PlayerCard> {
     });
   }
 }
+
+//Mobile
+
+class MobilePlayerCard extends StatelessWidget {
+  final String image;
+  final String name;
+  final String position;
+  final String goal;
+  const MobilePlayerCard({
+    super.key,
+    required this.name,
+    required this.position,
+    required this.goal,
+    required this.image,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final imageWidth =
+        screenWidth * 0.3; // Adjust image width as a percentage of screen width
+
+    return Container(
+      padding: EdgeInsets.only(right: 12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+        color: Colors.black,
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: imageWidth, // Set image width based on screen width
+            height: imageWidth, // Make image square
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8),
+                bottomLeft: Radius.circular(8),
+              ),
+              color: Colors.white,
+            ),
+            child: Image.asset(
+              image,
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: mSectionSubheadingTextStyle.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ), // Adjust font size for mobile view
+                ),
+                Text(
+                  position,
+                  style: kSectionSubheadingTextStyle.copyWith(fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(goal,
+                  style: kSectionSubheadingTextStyle.copyWith(
+                    fontSize: 32,
+                    // fontWeight: FontWeight.bold,
+                  )), // Adjust font size for mobile view
+              Text("Assists",
+                  style: kSectionSubheadingTextStyle.copyWith(
+                    fontSize: 12,
+                  )),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 //
 
 class SquarePlayerCard extends StatefulWidget {
@@ -133,7 +217,6 @@ class _SquarePlayerCardState extends State<SquarePlayerCard> {
       onEnter: (_) => _onHover(true),
       onExit: (_) => _onHover(false),
       cursor: SystemMouseCursors.click,
-
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
         // padding: const EdgeInsets.all(16),
@@ -143,11 +226,11 @@ class _SquarePlayerCardState extends State<SquarePlayerCard> {
           boxShadow: _isHovered
               ? [
                   BoxShadow(
-                        color: Colors.black.withOpacity(0.6),
-                        offset: Offset(0, 4),
-                        blurRadius: 10,
-                        spreadRadius: 5,
-                      ),
+                    color: Colors.black.withOpacity(0.6),
+                    offset: Offset(0, 4),
+                    blurRadius: 10,
+                    spreadRadius: 5,
+                  ),
                 ]
               : [],
         ),

@@ -113,6 +113,108 @@ class NextMatchContainer extends StatelessWidget {
   }
 }
 
+//
+
+class MobileNextMatchContainer extends StatelessWidget {
+  const MobileNextMatchContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Next Match', style: mSectionSubheadingTextStyle),
+              SizedBox(width: MediaQuery.of(context).size.width / 9),
+              Text('Get Tickets', style: mSectionSubheadingTextStyle),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.all(24.0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.red),
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/FC_Logo.png',
+                          width: 50,
+                          height: 50,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Chelsea",
+                          style: mSectionSubheadingTextStyle.copyWith(
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 80,
+                    ),
+                    // ignore: prefer_const_constructors
+                    Column(
+                      children: [
+                        Text('Premier League',
+                            style: kSectionSubheadingTextStyle.copyWith(
+                                fontSize: 12, color: Colors.grey)),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text('VS',
+                            style: mSectionSubheadingTextStyle.copyWith(
+                                fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text('St James Park', style: mCardTextStyle),
+                        Text('22 July', style: mCardTextStyle),
+                      ],
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 80,
+                    ),
+                    Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/FC_Logo.png',
+                          width: 50,
+                          height: 50,
+                        ),
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          "Leicester C",
+                          style: kSectionSubheadingTextStyle.copyWith(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 //NextMatchDeatiled Container
 
 class NextMatchDetailedContainer extends StatefulWidget {

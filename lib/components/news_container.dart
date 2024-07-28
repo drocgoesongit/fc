@@ -1,4 +1,3 @@
-
 import 'package:fc/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -106,6 +105,59 @@ class _NewsCardState extends State<NewsCard> {
               ),
           ],
         ),
+      ),
+    );
+  }
+}
+//
+
+class MobileNewsCard extends StatelessWidget {
+  final String imagePath;
+  final String title;
+  final String details;
+
+  const MobileNewsCard({
+    super.key,
+    required this.imagePath,
+    required this.title,
+    required this.details,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(8),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(imagePath),
+          const SizedBox(height: 8),
+          Text(
+            title,
+            style: kSectionHeadingTextStyle.copyWith(fontSize: 16),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            details,
+            style: kSectionSubheadingTextStyle.copyWith(fontSize: 14),
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }

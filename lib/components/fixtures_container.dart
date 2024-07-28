@@ -36,7 +36,7 @@ class _FixturesContainerState extends State<FixturesContainer> {
           isHovered = hovering;
         });
       },
-      
+
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
         decoration: BoxDecoration(
@@ -161,7 +161,6 @@ class _FixturesContainerState extends State<FixturesContainer> {
               },
               child: Row(
                 children: [
-                  
                   Icon(
                     Icons.arrow_forward_sharp,
                     color: Colors.orange,
@@ -169,6 +168,123 @@ class _FixturesContainerState extends State<FixturesContainer> {
                   )
                 ],
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+//
+
+class MobileFixturesContainer extends StatefulWidget {
+  final String team1Name;
+  final String team1IconPath;
+  final String team2Name;
+  final String team2IconPath;
+  final String matchTime;
+  final String location;
+
+  const MobileFixturesContainer({
+    super.key,
+    required this.team1Name,
+    required this.team1IconPath,
+    required this.team2Name,
+    required this.team2IconPath,
+    required this.matchTime,
+    required this.location,
+  });
+
+  @override
+  _MobileFixturesContainerState createState() =>
+      _MobileFixturesContainerState();
+}
+
+class _MobileFixturesContainerState extends State<MobileFixturesContainer> {
+  bool isTapped = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isTapped = !isTapped;
+        });
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
+        decoration: BoxDecoration(
+          color: isTapped ? Colors.white : Colors.grey.withOpacity(0.4),
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 30,
+                        height: 30,
+                        child: Image.asset(
+                          widget.team1IconPath, // replace with actual path
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(widget.team1Name,
+                          overflow: TextOverflow.ellipsis,
+                          style: mSectionSubheadingTextStyle.copyWith(
+                              color: Colors.black)),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 30,
+                        height: 30,
+                        child: Image.asset(
+                          widget.team2IconPath, // replace with actual path
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(widget.team2Name,
+                          overflow: TextOverflow.ellipsis,
+                          style: mSectionSubheadingTextStyle.copyWith(
+                              color: Colors.black)),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.access_time, size: 16),
+                    const SizedBox(width: 4),
+                    Text(widget.matchTime,
+                        style: mCardTextStyle.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Icon(Icons.location_on, size: 16),
+                    const SizedBox(width: 4),
+                    Text(widget.location,
+                        style: mCardTextStyle.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
