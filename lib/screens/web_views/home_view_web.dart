@@ -26,6 +26,7 @@ class HomeViewWeb extends StatelessWidget {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Column(
                   children: [
@@ -81,6 +82,7 @@ class HomeViewWeb extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CarouselSlider(
                         options: CarouselOptions(

@@ -1,6 +1,7 @@
 import 'package:fc/components/news_container.dart';
 import 'package:fc/constants/custom_colors.dart';
 import 'package:fc/constants/text_styles.dart';
+import 'package:fc/screens/web_views/news_detail_view_web.dart';
 import 'package:flutter/material.dart';
 
 class NewsViewWeb extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:fc/components/sponsor_container.dart';
 import 'package:fc/constants/custom_colors.dart';
 import 'package:fc/constants/text_styles.dart';
+import 'package:fc/screens/web_views/sponsors_detail_view_web.dart';
 import 'package:flutter/material.dart';
 
 class SponsorsViewWeb extends StatelessWidget {
@@ -16,9 +17,7 @@ class SponsorsViewWeb extends StatelessWidget {
         ),
         color: backgroundBlackCustomcolor,
         width: MediaQuery.of(context).size.width,
-        // height: MediaQuery.of(context).size.height,
-        child: Expanded(
-            child: Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -44,7 +43,6 @@ class SponsorsViewWeb extends StatelessWidget {
               height: 18,
             ),
             Row(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SponsorContainer(),
                 SizedBox(
@@ -56,9 +54,9 @@ class SponsorsViewWeb extends StatelessWidget {
                 ),
                 SponsorContainer(),
               ],
-            )
+            ),
           ],
-        )),
+        ),
       ),
     );
   }
