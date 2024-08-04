@@ -1,6 +1,7 @@
 import 'package:fc/components/news_container.dart';
 import 'package:fc/constants/custom_colors.dart';
 import 'package:fc/constants/text_styles.dart';
+import 'package:fc/screens/mobile_views/news_detailed_view_mobile.dart';
 import 'package:flutter/material.dart';
 
 class NewsViewMobile extends StatelessWidget {
@@ -17,13 +18,20 @@ class NewsViewMobile extends StatelessWidget {
         color: backgroundBlackCustomcolor,
         width: screenWidth,
         height: screenHeight,
-        child: const Column(
+        child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Latest Club News", style: mSectionSubheadingTextStyle),
-                Text("view all", style: mSectionSubheadingTextStyle),
+                InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NewsDetailedViewMobile()),
+                        ),
+                    child:
+                        Text("View all", style: mSectionSubheadingTextStyle)),
               ],
             ),
             SizedBox(height: 12),

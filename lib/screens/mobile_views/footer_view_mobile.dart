@@ -13,9 +13,11 @@ class FooterViewMobile extends StatelessWidget {
 
     return Material(
       child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: screenWidth / 20,
-          vertical: screenHeight / 10,
+        padding: EdgeInsets.only(
+          left: screenWidth / 20,
+          right: screenWidth / 20,
+          bottom: screenHeight / 10,
+          top: screenHeight / 20,
         ),
         color: backgroundBlackCustomcolor,
         width: screenWidth,

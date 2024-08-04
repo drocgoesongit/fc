@@ -40,12 +40,6 @@ class _ParentViewMobileState extends State<ParentViewMobile> {
           AboutUsViewMobile(),
           StaffViewMobile(),
           FooterViewMobile(),
-          // const EmpowerViewMobile(),
-          // const PortfolioViewMobile(),
-          // // AboutUsViewMobile(),
-          // const ContactUsViewMobile(),
-          // const FooterViewMobile(),
-          // Add more pages here
         ],
       ),
     );

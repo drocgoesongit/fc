@@ -1,6 +1,7 @@
 import 'package:fc/components/staff_container.dart';
 import 'package:fc/constants/custom_colors.dart';
 import 'package:fc/constants/text_styles.dart';
+import 'package:fc/screens/mobile_views/staff_detailed_view_mobile.dart';
 import 'package:flutter/material.dart';
 
 class StaffViewMobile extends StatelessWidget {
@@ -70,7 +71,14 @@ class StaffViewMobile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Managers & Staffs", style: mSectionSubheadingTextStyle),
-                Text("view all", style: mSectionSubheadingTextStyle),
+                InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => StaffDetailedViewMobile()),
+                        ),
+                    child:
+                        Text("view all", style: mSectionSubheadingTextStyle)),
               ],
             ),
             const SizedBox(height: 18),

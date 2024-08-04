@@ -1,6 +1,7 @@
 import 'package:fc/components/player_card.dart';
 import 'package:fc/constants/custom_colors.dart';
 import 'package:fc/constants/text_styles.dart';
+import 'package:fc/screens/mobile_views/top_performer_detailed_view_mobile.dart';
 import 'package:flutter/material.dart';
 
 class TopPerformerViewMobile extends StatelessWidget {
@@ -24,10 +25,18 @@ class TopPerformerViewMobile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Top Performers", style: mSectionSubheadingTextStyle),
-                Text("View all", style: mSectionSubheadingTextStyle),
+                InkWell(
+                    onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  TopPerformerDetailedViewMobile()),
+                        ),
+                    child:
+                        Text("View all", style: mSectionSubheadingTextStyle)),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 80),
+            SizedBox(height: MediaQuery.of(context).size.height / 60),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
