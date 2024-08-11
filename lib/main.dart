@@ -1,7 +1,12 @@
+import 'package:fc/firebase_options.dart';
 import 'package:fc/views/parent_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
@@ -12,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       title: 'Football Club',
       debugShowCheckedModeBanner: false,
       home: ParentView(),

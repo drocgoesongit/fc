@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "474193191799",
+    "project_id": "football-club-79164",
+    "storage_bucket": "football-club-79164.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474193191799:android:1e1e0c082c306442f0f772",
+        "android_client_info": {
+          "package_name": "com.fc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAig9mg7YNjEICYx9fHbMDluk-nffLYCjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
